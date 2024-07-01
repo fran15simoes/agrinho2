@@ -1,12 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página Inicial</title>
+    <title>Index sobre o Agrinho</title>
+    <style>
+        /* Estilos opcionais para melhorar a aparência */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #444444;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Olá, mundo!</h1>
-    <p>Este é o meu site inicial.</p>
+    <h1>Índice sobre o Agrinho</h1>
+    <nav id="menu">
+        <a href="#" onclick="showSection('sobre')">Sobre o Agrinho</a>
+        <a href="#" onclick="showSection('programas')">Programas</a>
+        <a href="#" onclick="showSection('participar')">Como Participar</a>
+    </nav>
+    <div id="conteudo">
+        <section id="sobre" style="display: block;">
+            <h2>Sobre o Agrinho</h2>
+            <p>O Agrinho é um programa de responsabilidade social desenvolvido pelo Sistema FAEP/SENAR-PR.</p>
+        </section>
+        <section id="programas" style="display: none;">
+            <h2>Programas do Agrinho</h2>
+            <p>O Agrinho oferece programas educacionais nas áreas de meio ambiente, saúde, e cidadania.</p>
+        </section>
+        <section id="participar" style="display: none;">
+            <h2>Como Participar do Agrinho</h2>
+            <p>Para participar do Agrinho, escolas podem se inscrever e implementar os programas educacionais.</p>
+        </section>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Esconder todas as seções
+            var sections = document.querySelectorAll('#conteudo > section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Mostrar a seção selecionada
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
